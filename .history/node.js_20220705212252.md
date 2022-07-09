@@ -1,11 +1,4 @@
 # 事件循环
-## Node.js 事件循环顺序：
-- timers：执行到期的 setTimeout、setInterval 回调。
-- pending callbacks：挂起的回调函数，执行延迟到下一个循环迭代的 I/O 回调。对某些系统操作（如TCP错误类型）执行回调。
-- idle, prepare：空闲 准备，node 系统内部使用。
-- poll：检索新的 I/O 事件。执行 I/O（例如文件、网络）的回调，除了 close，定时器和 setImmediate 以外的所有回调。其余情况 node 将在适当的时候在此阻塞。
-- check：执行 setImmediate 回调。
-- close callbacks：执行 close 事件回调，如 socket.on('close', ...)、http close等。
 # commonjs
 ## 原理
 
