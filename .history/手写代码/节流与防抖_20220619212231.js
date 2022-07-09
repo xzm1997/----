@@ -14,15 +14,14 @@ function debounce(fn, delay) {
   }
 }
 
-const throttle = function(fn, wait) {
+function throttle(fn, delay) {
   let timer = null;
   return function() {
-    let context = this;
-    let args = arguments;
     if (!timer) {
-      timer = setTimeout(function() {
-        fn().apply(context, args);
-      },wait);
+      timer = setTimeout(() => {
+        fn();
+        timer = null;
+      }, delay)
     }
   }
 }

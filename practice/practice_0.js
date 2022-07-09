@@ -1,6 +1,6 @@
-function debounce(fn, delay) {
+const debounce = function(fn, wait) {
   let timer = null;
-  return function() {
+  return new function() {
     let context = this;
     let args = arguments;
     if (timer) {
@@ -8,9 +8,9 @@ function debounce(fn, delay) {
       timer = null;
     }
 
-    timer = setTimeout(() => {
-      fn.apply(context, args);
-    }, delay);
+    timer = setTimeout(function() {
+      fn().apply(context, args);
+    }, wait);
   }
 }
 
