@@ -19,18 +19,10 @@ const promiseAll = function(promises) {
 }
 
 const promiseRace = function(promises) {
+  if (!promises.isArray()) {
+    throw 'TypeError';
+  }
   return new Promise((resolve, reject) => {
-    if (!promises.isArray()) {
-      throw 'TypeError';
-    }
-    promise.forEach(promise => {
-      Promise.resolve(promise)
-        .then(res => {
-          resolve(res)
-        })
-        .catch(err => {
-          reject(err);
-        })
-    })
+
   })
 }

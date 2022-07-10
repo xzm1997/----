@@ -24,13 +24,7 @@ const promiseRace = function(promises) {
       throw 'TypeError';
     }
     promise.forEach(promise => {
-      Promise.resolve(promise)
-        .then(res => {
-          resolve(res)
-        })
-        .catch(err => {
-          reject(err);
-        })
+      
     })
   })
 }

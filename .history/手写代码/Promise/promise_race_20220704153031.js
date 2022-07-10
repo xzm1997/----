@@ -10,6 +10,7 @@ Promise.race = function (iterators) {
       })
     }
   })
+
 }
 var promise1 = new Promise(function(resolve, reject) {
   setTimeout(resolve, 500, 'one');
