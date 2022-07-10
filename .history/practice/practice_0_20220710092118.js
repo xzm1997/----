@@ -2,7 +2,7 @@ function add(...args) {
   return args.reduce((a, b) => a + b);
 }
 
-function currying(fn) {
+function furry(fn) {
   let args = [];
   return function temp(...newArgs) {
     if (newArgs.length) {
@@ -15,8 +15,3 @@ function currying(fn) {
     }
   }
 }
-
-let addCurry = currying(add)
-console.log(addCurry(1)(2)(3)(4, 5)())  //15
-console.log(addCurry(1)(2)(3, 4, 5)())  //15
-console.log(addCurry(1)(2, 3, 4, 5)())  //15
