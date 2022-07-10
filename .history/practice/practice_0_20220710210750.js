@@ -6,7 +6,7 @@ function currying(fn) {
   args = []
   return function temp(...newArgs) {
     if (newArgs.length) {
-      args.push(...newArgs);
+      args = args.concat(newArgs);
       return temp;
     } else {
       let res = fn.apply(this, args);

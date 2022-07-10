@@ -1,12 +1,12 @@
 function add(...args) {
-  return args.reduce((a, b) => a + b);
+  return reduce((a, b) => a + b);
 }
 
 function currying(fn) {
   args = []
   return function temp(...newArgs) {
     if (newArgs.length) {
-      args.push(...newArgs);
+      args.push(newArgs);
       return temp;
     } else {
       let res = fn.apply(this, args);
