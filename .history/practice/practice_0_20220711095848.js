@@ -1,14 +1,16 @@
 const myFlat = function(arr, depth) {
-  if (!Array.isArray(arr) || !depth) {
+  while (!depth) {
     return arr;
   }
-  return arr.reduce(function(prev, cur) {
-    if (Array.isArray(cur)) {
-      return prev.concat(myFlat(cur, depth-1));
+  let res = []
+  arr.forEach((item) => {
+    if (Array.isArray(item)) {
+      res.push(...item);
     } else {
-      return prev.concat(cur);
+      res.push(item);
     }
-  }, [])
+  })
+  return myFlat(res, depth-1);
 }
 
 

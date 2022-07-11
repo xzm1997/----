@@ -4,7 +4,7 @@ const myFlat = function(arr, depth) {
   }
   return arr.reduce(function(prev, cur) {
     if (Array.isArray(cur)) {
-      return prev.concat(myFlat(cur, depth-1));
+      return prev.push(myFlat(cur, depth-1));
     } else {
       return prev.concat(cur);
     }

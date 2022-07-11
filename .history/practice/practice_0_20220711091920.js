@@ -1,0 +1,3 @@
+function timeWait(fn, time) {
+
+}

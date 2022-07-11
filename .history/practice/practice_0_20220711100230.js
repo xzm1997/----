@@ -2,13 +2,14 @@ const myFlat = function(arr, depth) {
   if (!Array.isArray(arr) || !depth) {
     return arr;
   }
-  return arr.reduce(function(prev, cur) {
+  arr.reduce(function(prev, cur) {
     if (Array.isArray(cur)) {
       return prev.concat(myFlat(cur, depth-1));
     } else {
       return prev.concat(cur);
     }
   }, [])
+  return arr;
 }
 
 
