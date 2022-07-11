@@ -4,12 +4,9 @@ const step = function(fn, wait, num) {
     setTimeout(() => {
       fn();
       --num;
-      temp();
     }, wait);
   }
 }
 
-let run = step(() => {
-  console.log(1);
-}, 1000, 8);
+let run = step();
 run();

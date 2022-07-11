@@ -4,7 +4,6 @@ const step = function(fn, wait, num) {
     setTimeout(() => {
       fn();
       --num;
-      temp();
     }, wait);
   }
 }
