@@ -26,7 +26,10 @@ const throttle = function(fn, delay) {
   }
 }
 
+let start, end;
 // Test debounce
+console.log('Debounce begin!')
+start = new Date().getTime()
 let fnDebounce = debounce(() => {
   console.log(1);
 }, 1000);
@@ -34,10 +37,12 @@ fnDebounce();
 setTimeout(() => {
   fnDebounce();
 }, 500);
+end = new Date().getTime()
+console.log('Debounce end, ')
 
 // Test throttle
 let fnThrottle = throttle(() => {
-  console.log(2);
+  console.log(1);
 }, 1000);
 fnThrottle();
 setTimeout(() => {

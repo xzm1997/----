@@ -10,7 +10,7 @@ const debounce = function(fn, delay) {
     timer = setTimeout(function() {
       fn.apply(context, args);
     }, delay);
-  }
+  }()
 }
 
 const throttle = function(fn, delay) {
@@ -19,27 +19,15 @@ const throttle = function(fn, delay) {
     let context = this;
     let args = arguments;
     if (!timer) {
-      timer = setTimeout(function() {
+      setTimeout(function() {
         fn.apply(context, args);
       }, delay)
     }
   }
 }
 
+
 // Test debounce
-let fnDebounce = debounce(() => {
+debounce(() => {
   console.log(1);
 }, 1000);
-fnDebounce();
-setTimeout(() => {
-  fnDebounce();
-}, 500);
-
-// Test throttle
-let fnThrottle = throttle(() => {
-  console.log(2);
-}, 1000);
-fnThrottle();
-setTimeout(() => {
-  fnThrottle();
-}, 500);

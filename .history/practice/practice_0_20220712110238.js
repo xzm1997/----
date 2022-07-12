@@ -26,18 +26,19 @@ const throttle = function(fn, delay) {
   }
 }
 
+
 // Test debounce
-let fnDebounce = debounce(() => {
-  console.log(1);
-}, 1000);
-fnDebounce();
-setTimeout(() => {
-  fnDebounce();
-}, 500);
+// let fnDebounce = debounce(() => {
+//   console.log(1);
+// }, 1000);
+// fnDebounce();
+// setTimeout(() => {
+//   fnDebounce();
+// }, 500);
 
 // Test throttle
 let fnThrottle = throttle(() => {
-  console.log(2);
+  console.log(1);
 }, 1000);
 fnThrottle();
 setTimeout(() => {

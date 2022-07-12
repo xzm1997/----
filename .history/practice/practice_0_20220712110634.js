@@ -26,6 +26,7 @@ const throttle = function(fn, delay) {
   }
 }
 
+let start, end;
 // Test debounce
 let fnDebounce = debounce(() => {
   console.log(1);
