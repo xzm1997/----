@@ -14,19 +14,4 @@ Function.prototype.myApply = function(context) {
 Function.prototype.myCall = function (context, ...args) {
   if (typeof this !== "function") throw 'TypeError';
   let context = context || window;
-  context.fn = this;
-  let res = context.fn(...args);
-  delete context.fn;
-  return res;
-}
-
-Function.prototype.myBind = function(context) {
-  if (typeof this !== 'function') throw 'TypeError';
-  let context = context || window, fn = this;
-  return function Fn() {
-    return fn.apply(
-      this instanceof Fn ? this : context,
-      args.concat(...arguments)
-    )
-  }
 }

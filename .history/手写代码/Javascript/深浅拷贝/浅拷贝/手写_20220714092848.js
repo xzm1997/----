@@ -6,14 +6,6 @@ function shallowCopy(target) {
         copy[prop] = target[prop];
       }
     }
-    return copy;
   }
   return target;
 }
-
-
-let target = {a:{b:1}};
-let res = shallowCopy(target);
-
-res.a.b = 2;
-console.log(target);

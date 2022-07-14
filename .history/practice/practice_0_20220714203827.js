@@ -22,11 +22,7 @@ Function.prototype.myCall = function (context, ...args) {
 
 Function.prototype.myBind = function(context) {
   if (typeof this !== 'function') throw 'TypeError';
-  let context = context || window, fn = this;
-  return function Fn() {
-    return fn.apply(
-      this instanceof Fn ? this : context,
-      args.concat(...arguments)
-    )
-  }
+  let context = context || window;
+  context.fn = this;
+  
 }

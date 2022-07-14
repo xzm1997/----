@@ -26,7 +26,7 @@ Function.prototype.myBind = function(context) {
   return function Fn() {
     return fn.apply(
       this instanceof Fn ? this : context,
-      args.concat(...arguments)
+      args.concat(...arguments);
     )
   }
 }
