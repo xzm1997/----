@@ -1,0 +1,9 @@
+class Promise {
+  constructor() {
+    
+  }
+
+  then() {
+    
+  }
+}

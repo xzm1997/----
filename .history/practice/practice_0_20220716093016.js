@@ -1,0 +1,3 @@
+Promise.myAll = function(Promises) {
+  
+}

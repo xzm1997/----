@@ -29,4 +29,5 @@ var promise2 = new Promise(function(resolve, reject) {
 
 Promise.myAll([promise1, promise2]).then(function(value) {
 console.log(value);
+// Both resolve, but promise2 is faster
 });
