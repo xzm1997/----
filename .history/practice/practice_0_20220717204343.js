@@ -48,4 +48,4 @@ setTimeout(() => {
 }, 0);
 setTimeout(() => {
   throttleTest();
-}, 500);
+}, 5000);

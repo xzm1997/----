@@ -23,7 +23,7 @@ const throttle = function(fn, wait) {
       timer = setTimeout(() => {
         fn.apply(context, args);
         timer = null;
-      }, wait);
+      })
     }
   }
 }
@@ -48,4 +48,4 @@ setTimeout(() => {
 }, 0);
 setTimeout(() => {
   throttleTest();
-}, 500);
+}, 0);
