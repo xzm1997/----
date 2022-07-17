@@ -66,7 +66,7 @@ class MyPromise {
       }
       let count = 0, res = [];
       for (const p of promises) {
-        Promise.resolve(p).then(value => {
+        MyPromise.resolve(p).then(value => {
           res.push(value);
           ++count;
           if (count === promises.length) {
@@ -82,13 +82,6 @@ class MyPromise {
     return new Promise((resolve, reject) => {
       if (!Array.isArray(promises)) {
         throw 'TypeError';
-      }
-      for (const p of promises) {
-        Promise.resolve(p).then(value => {
-          return resolve(value);
-        }, reason => {
-          return reject(reason);
-        })
       }
     })
   }

@@ -83,13 +83,6 @@ class MyPromise {
       if (!Array.isArray(promises)) {
         throw 'TypeError';
       }
-      for (const p of promises) {
-        Promise.resolve(p).then(value => {
-          return resolve(value);
-        }, reason => {
-          return reject(reason);
-        })
-      }
     })
   }
 }

@@ -52,44 +52,9 @@ class MyPromise {
       this.resolveList.push(onFulFilled);
       this.rejectList.push(onRejected);
     }
-    if (this.status === FULFILLED) {
-      onFulFilled(this.value);
-    }
-    if (this.status === REJECTED) {
-      onRejected(this.reason);
-    }
+    if (this.status === FULFILLED) {}
+    if (this.status === REJECTED) {}
   }
-  all(promises) {
-    return new Promise((resolve, reject) => {
-      if (!Array.isArray(promises)) {
-        throw 'TypeError';
-      }
-      let count = 0, res = [];
-      for (const p of promises) {
-        Promise.resolve(p).then(value => {
-          res.push(value);
-          ++count;
-          if (count === promises.length) {
-            return resolve(res);
-          }
-        }, reason => {
-          return reject(reason);
-        })
-      }
-    })
-  }
-  race(promises) {
-    return new Promise((resolve, reject) => {
-      if (!Array.isArray(promises)) {
-        throw 'TypeError';
-      }
-      for (const p of promises) {
-        Promise.resolve(p).then(value => {
-          return resolve(value);
-        }, reason => {
-          return reject(reason);
-        })
-      }
-    })
-  }
+  all(promises) {}
+  race(promises) {}
 }

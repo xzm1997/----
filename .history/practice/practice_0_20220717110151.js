@@ -60,36 +60,26 @@ class MyPromise {
     }
   }
   all(promises) {
-    return new Promise((resolve, reject) => {
-      if (!Array.isArray(promises)) {
-        throw 'TypeError';
-      }
-      let count = 0, res = [];
-      for (const p of promises) {
-        Promise.resolve(p).then(value => {
-          res.push(value);
-          ++count;
-          if (count === promises.length) {
-            return resolve(res);
-          }
-        }, reason => {
-          return reject(reason);
-        })
-      }
-    })
+    if (!Array.isArray(promises)) {
+      throw 'TypeError';
+    }
+    let count = 0, res = [];
+    for (const p of promises) {
+      Promise.resolve(p).then(value => {
+        res.push(p);
+        ++count;
+        if (count === promises.length) {
+          return new Promise(res);
+        }
+      }, reason => {
+        return 
+      })
+    }
+    
   }
   race(promises) {
-    return new Promise((resolve, reject) => {
-      if (!Array.isArray(promises)) {
-        throw 'TypeError';
-      }
-      for (const p of promises) {
-        Promise.resolve(p).then(value => {
-          return resolve(value);
-        }, reason => {
-          return reject(reason);
-        })
-      }
-    })
+    if (!Array.isArray(promises)) {
+      throw 'TypeError';
+    }
   }
 }

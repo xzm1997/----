@@ -1,0 +1,6 @@
+
+
+// Test
+const targetFn = function () {
+  
+}

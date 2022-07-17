@@ -87,7 +87,7 @@ class MyPromise {
         Promise.resolve(p).then(value => {
           return resolve(value);
         }, reason => {
-          return reject(reason);
+          return
         })
       }
     })
