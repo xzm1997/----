@@ -19,6 +19,3 @@ let dir = input.split(' ');
 for (let i = 0; i < dir.length; ++i) {
   dir[i] = parseInt(dir[i]);
 }
-
-let res = new Array(dir.length).fill().map(() => new Array(dir.length).fill(0));
-console.log(res);

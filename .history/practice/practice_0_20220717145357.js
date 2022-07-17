@@ -14,11 +14,13 @@ let input = '1 2 3 4 5'
 
 // console.log(Math.abs(sum1 - sum2));
 
-
 let dir = input.split(' ');
 for (let i = 0; i < dir.length; ++i) {
   dir[i] = parseInt(dir[i]);
 }
+dir.sort((a, b) => a-b);
 
-let res = new Array(dir.length).fill().map(() => new Array(dir.length).fill(0));
-console.log(res);
+let sum1 = 0, sum2 = 0;
+for (let i = 0; i < dir.length; ++i) {
+  i % 2 === 0 ? sum1 += dir[i] : sum2 += dir[i];
+}
