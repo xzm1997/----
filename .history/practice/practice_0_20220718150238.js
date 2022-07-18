@@ -8,16 +8,12 @@ const taskRestrict = async function (limit, tasks, fn) {
     // 结果列表扩充
     resList.push(p);
     // 如果任务数大于限制并发数
-    if (limit < tasks.length) {
+    if (true) {
       // 创建当前任务，完成后删除
-      let e = p.then(() => executing.splice(executing.indexOf(e), 1));
-      executing.push(e);
       // await阻塞待完成任务，直到任务队列空闲
-      if (executing.length >= limit) await Promise.race(executing);
     }
   }
   // Promise.all
-  return Promise.all(resList);
 }
 
 const timeWait = function (wait) {
@@ -32,7 +28,6 @@ const timeWait = function (wait) {
 
 const main = async function () {
   let tasks = [1000, 500, 1001, 400, 1002, 1003, 1004, 1005];
-  tasks = new Array(10).fill(1000);
   let res = await taskRestrict(2, tasks, timeWait);
   console.log('result is ' + res);
 }

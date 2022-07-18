@@ -17,7 +17,7 @@ const taskRestrict = async function (limit, tasks, fn) {
     }
   }
   // Promise.all
-  return Promise.all(resList);
+  Promise.all(resList);
 }
 
 const timeWait = function (wait) {
@@ -32,7 +32,6 @@ const timeWait = function (wait) {
 
 const main = async function () {
   let tasks = [1000, 500, 1001, 400, 1002, 1003, 1004, 1005];
-  tasks = new Array(10).fill(1000);
   let res = await taskRestrict(2, tasks, timeWait);
   console.log('result is ' + res);
 }

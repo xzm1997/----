@@ -17,7 +17,7 @@ const taskRestrict = async function (limit, tasks, fn) {
     }
   }
   // Promise.all
-  return Promise.all(resList);
+  Promise.all(resList);
 }
 
 const timeWait = function (wait) {

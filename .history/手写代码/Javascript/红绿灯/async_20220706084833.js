@@ -6,10 +6,10 @@ let stepAsync = (color, time) => new Promise((resolve, reject) => {
 })
 
 const runAsync = async () => {
-  await stepAsync('red', 1000)
+  stepAsync('red', 1000)
   await stepAsync('yellow', 2000)
   await stepAsync('green', 3000)
-  runAsync()
+  await runAsync()
 }
 
 runAsync();
