@@ -23,9 +23,9 @@ function timeout(wait) {
   return new Promise(function (resolve, reject) {
     console.log('Task ', wait, ' begin');
     setTimeout(() => {
-      resolve(wait);
+      resolve(i);
       console.log('Task ', wait, ' end');
-    }, wait)
+    })
   })
 }
 

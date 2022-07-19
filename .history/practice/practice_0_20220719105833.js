@@ -20,18 +20,16 @@ async function tasksRestrict(limit, tasks, fn) {
 }
 
 function timeout(wait) {
-  return new Promise(function (resolve, reject) {
-    console.log('Task ', wait, ' begin');
-    setTimeout(() => {
-      resolve(wait);
-      console.log('Task ', wait, ' end');
-    }, wait)
+  console.log('Task ', wait, ' begin');
+  setTimeout(() => {
+    resolve(i);
+    console.log('Task ', wait, ' end');
   })
 }
 
 async function main() {
   let tasks = [1000, 500, 1001, 400, 1002, 1003, 1004, 1005];
-  let res = await tasksRestrict(2, tasks, timeout);
+  let res = await tasksRestrict(2, tasks, timeWait);
   console.log('result is ' + res);
 }
 
