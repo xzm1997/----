@@ -1,0 +1,3 @@
+function myApply(context, ...args) {
+  
+}
