@@ -1,7 +1,7 @@
 function a() {
   var temp = 1;
   function b() {
-    console.log(this);
+    console.log(temp);
   }
   b();
 }
