@@ -5,7 +5,7 @@ function treat (str) {
     if (temp.length) temp[0].toUpperCase();
     item = temp.join('');
   }
-  return list.join('')
+  return list.join('');
 }
 
 let str = 'poco_engle_cat_tiger';
