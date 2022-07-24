@@ -120,17 +120,7 @@ class Promise {
   catch (onRejected) {
     return this.then(undefined, onRejected);
   }
-  //finally方法
-  finally (onSettled) {
-    return this.then(data => {
-      // then返回的也是一个Promise对象
-      onSettled(); // 执行回调,但不传递数据; 注：finally 没有参数
-      return data; // 保证返回的Promise对象的数据一致
-    }, reason => {
-      onSettled();
-       throw reason; // 保证返回的Promise对象的数据状态一致
-      })
-  }
+
   //添加 resolve 方法
   static resolve(value) {
     //返回promise对象
@@ -182,7 +172,7 @@ class Promise {
       }
     });
   }
-
+ 
   //添加 race 方法
   static race(promises) {
     return new Promise((resolve, reject) => {
@@ -197,6 +187,17 @@ class Promise {
       }
     });
   }
+
+  //finally方法
+    finally (onSettled) {
+        return this.then(data=>{ // then返回的也是一个Promise对象
+            onSettled(); // 执行回调,但不传递数据
+            return data; // 保证返回的Promise对象的数据一致
+        },reason=>{
+            onSettled();
+            throw reason; // 保证返回的Promise对象的数据状态一致
+        })
+      }
 }
 
 let p1 = new Promise((resolve, reject) => {
