@@ -12,8 +12,8 @@ for (let i = 0 ; i < 20; ++i) {
 // console.log(dir);
 
 for (let i = 0; i < num; ++i) {
-  for (let j = i + 1; j < num - 2; ++j) {
-    for (let k = j + 1; k < num - 1; ++k) {
+  for (let j = i + 1; j < num; ++j) {
+    for (let k = j + 1; k < num; ++k) {
       if ((dir[i][0] === dir[j][0] && dir[i][0] === dir[k][0])
       || (dir[i][1] === dir[j][1] && dir[i][1] === dir[k][1])) {
         continue;

@@ -12,20 +12,12 @@ for (let i = 0 ; i < 20; ++i) {
 // console.log(dir);
 
 for (let i = 0; i < num; ++i) {
-  for (let j = i + 1; j < num - 2; ++j) {
-    for (let k = j + 1; k < num - 1; ++k) {
+  for (let j = i + 1; j < num; ++j) {
+    for (let k = j + 1; k < num; ++k) {
       if ((dir[i][0] === dir[j][0] && dir[i][0] === dir[k][0])
       || (dir[i][1] === dir[j][1] && dir[i][1] === dir[k][1])) {
-        continue;
+        
       }
-      let square = [];
-      square.push(Math.pow(dir[i][0] - dir[j][0], 2) + Math.pow(dir[i][1] - dir[j][1], 2));
-      square.push(Math.pow(dir[i][0] - dir[k][0], 2) + Math.pow(dir[i][1] - dir[k][1], 2));
-      square.push(Math.pow(dir[j][0] - dir[k][0], 2) + Math.pow(dir[j][1] - dir[k][1], 2));
-      square.sort((a, b) => a - b);
-      if (square[2] === square[0] + square[1]) ++res;
     }
   }
 }
-
-console.log(res);
