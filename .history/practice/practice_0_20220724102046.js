@@ -1,0 +1,5 @@
+function myNew (obj, ...rest) {
+  let newObj = Object.create(obj.prototype);
+  const result = obj.apply(newObj, rest);
+  return typeof result === 'object' ? result : newObj;
+}
