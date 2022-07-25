@@ -10,7 +10,4 @@ for (let item of dir) {
   res = res.concat(item.split(''), ' ');
 }
 res.pop();
-
-let output = '[\"' + res.join('\",\"') + '\"]'
-
-console.log(output);
+console.log(res);

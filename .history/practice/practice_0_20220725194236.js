@@ -11,6 +11,6 @@ for (let item of dir) {
 }
 res.pop();
 
-let output = '[\"' + res.join('\",\"') + '\"]'
+let output = res.join('\",\"')
 
 console.log(output);

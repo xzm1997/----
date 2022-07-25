@@ -26,7 +26,7 @@ switch (mon - 1) {
 num += day;
 
 let weekDayNum = num % 7, weekDay;
-let dt = new Date(year, mon-1, day);
+let dt = new Date(year, mon, day);
 let dir = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 weekDay = dir[dt.getDay()]
 // switch (weekDayNum) {
