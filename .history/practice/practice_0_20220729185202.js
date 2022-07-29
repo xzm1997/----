@@ -3,11 +3,9 @@ const tasksLimit = async function() {
 }
 
 function timeWait (time) {
-  return new Promise(function(resolve, reject) {
-    console.log(time);
-    setTimeout(() => {
-      
-    })
+  console.log(time);
+  setTimeout(() => {
+    
   })
 }
 
