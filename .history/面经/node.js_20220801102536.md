@@ -7,9 +7,7 @@
 - check：执行 setImmediate 回调。
 - close callbacks：执行 close 事件回调，如 socket.on('close', ...)、http close等。
 ## 多线程
-- 在 Node.js 第 13 版中，有一个名为工作线程（worker threads）的新模块可用于实现多线程。
-- 尽管非阻塞异步回调可以非常有效地处理多个任务，但是对于需要大量 CPU 使用率的功能（例如加密操作）会阻止其他进程执行，在这种情况下，Node.js 的性能很弱。
-- 工作线程模块通过隔离该功能克服了这个不足，它将 CPU 使用率很高的任务放在一个独立的线程中并由后台处理，而不会阻塞其他进程。
+- 
 # commonjs
 ## 原理
 
