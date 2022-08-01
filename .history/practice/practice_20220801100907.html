@@ -4,29 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>垂直水平居中</title>
+  <title>Document</title>
   <style>
-    .outer {
+    .outter {
       width: 400px;
       height: 400px;
-      background:lavenderblush;
-      position: relative;
+      background: lavender;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .inner {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       background: lawngreen;
-      position: absolute;
-      top:0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
     }
   </style>
 </head>
 <body>
-  <div class="outer">
+  <div class="outter">
     <div class="inner"></div>
   </div>
 </body>
