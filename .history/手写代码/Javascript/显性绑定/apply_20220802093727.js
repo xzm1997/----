@@ -10,3 +10,5 @@ Function.prototype.myApply = function (context) {
   delete context.fn;
   return res;
 }
+
+console.log(this);

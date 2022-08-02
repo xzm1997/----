@@ -4,9 +4,11 @@ Function.prototype.myApply = function (context) {
   }
 
   let args = arguments[1] || null;
-  context = context || window;
+  let context = context || window;
   context.fn = this;
   let res = context.fn(...args);
   delete context.fn;
   return res;
 }
+
+console.log(this);
