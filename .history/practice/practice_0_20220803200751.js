@@ -6,7 +6,5 @@ let totalMark = 0;
 for (let i = 1; i <= 5; ++i) {
   totalMark += i * inputArr[i-1];
 }
-let res = totalMark / sum;
-let outputArr = res.toString().split('.');
-let output = outputArr[0] + '.' + outputArr[1].slice(0, 1);
-console.log(output)
+let res = totalMark / sum
+console.log(totalMark, sum, res)
