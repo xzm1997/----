@@ -8,7 +8,7 @@ function currying(fn) {
       ]
       return Fn;
     } else {
-      let res = fn(...args)
+      let res = fn(args)
       args = [];
       return res;
     }

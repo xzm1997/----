@@ -1,21 +1,17 @@
 function currying(fn) {
   let args = [];
-  return function Fn(...newArgs) {
-    if (newArgs.length) {
-      args = [
-        ...args,
-        ...newArgs
-      ]
-      return Fn;
+  return function Fn() {
+    if (arguments.length !== 0) {
+      args.concat(arguments);
     } else {
-      let res = fn(...args)
+      let res = fn(args);
       args = [];
       return res;
     }
   }
 }
 
-function add(...arr) {
+function add(arr) {
   return arr.reduce((a, b) => a + b);
 }
 

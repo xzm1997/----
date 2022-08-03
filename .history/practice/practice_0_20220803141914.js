@@ -1,14 +1,11 @@
 function currying(fn) {
   let args = [];
   return function Fn(...newArgs) {
-    if (newArgs.length) {
-      args = [
-        ...args,
-        ...newArgs
-      ]
+    if (newArgs.length !== 0) {
+      args.concat(newArgs);
       return Fn;
     } else {
-      let res = fn(...args)
+      let res = fn(args);
       args = [];
       return res;
     }
