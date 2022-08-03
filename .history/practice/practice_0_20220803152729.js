@@ -2,7 +2,7 @@ class Man {
   constructor() {
     this.queue = [];
     setTimeout(() => {
-      this.run();
+      run();
     }, 0);
   }
 
@@ -11,23 +11,12 @@ class Man {
     fn && fn();
   }
 
-  sleep(delay) {
-    this.queue.push(() => {
-      console.log('sleep start');
-      setTimeout(() => {
-        console.log('sleep end');
-        this.run();
-      }, delay);
-    })
-    return this;
+  sleep() {
+
   }
 
   work() {
-    this.queue.push(() => {
-      console.log('working');
-      this.run();
-    });
-    return this;
+
   }
 }
 

@@ -11,7 +11,7 @@ class Man {
     fn && fn();
   }
 
-  sleep(delay) {
+  sleep() {
     this.queue.push(() => {
       console.log('sleep start');
       setTimeout(() => {
@@ -23,11 +23,7 @@ class Man {
   }
 
   work() {
-    this.queue.push(() => {
-      console.log('working');
-      this.run();
-    });
-    return this;
+
   }
 }
 

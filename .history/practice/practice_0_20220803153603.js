@@ -11,23 +11,18 @@ class Man {
     fn && fn();
   }
 
-  sleep(delay) {
+  sleep() {
     this.queue.push(() => {
       console.log('sleep start');
       setTimeout(() => {
         console.log('sleep end');
         this.run();
-      }, delay);
+      })
     })
-    return this;
   }
 
   work() {
-    this.queue.push(() => {
-      console.log('working');
-      this.run();
-    });
-    return this;
+
   }
 }
 
