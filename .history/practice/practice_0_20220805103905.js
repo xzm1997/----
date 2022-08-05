@@ -2,55 +2,40 @@ const PENDING = 'pending';
 const FULFILLED = 'fulfilled';
 const REJECTED = 'rejected';
 
-class _Promise {
+class Promise {
   constructor(executor) {
-    // init
     this.status = PENDING;
     this.result = null;
 
     this.resolveList = [];
     this.rejectList = [];
-    // resolve
+
     const resolve = function(value) {
-      if (this.PromiseState !== PENDING) return;
+      if (this.status !== PENDING) return;
       if (value instanceof Promise) {
         return value.then(resolve, reject);
       }
-      
+      this.status = FULFILLED;
+      this.result = value;
+      setTimeout(() => {
+        this.resolveList.forEach(function(callback) {
+          callback(value);
+        })
+      }, 0)
     }
-    // reject
-    const reject = function() {
-      if (this.PromiseState !== PENDING) return;
+
+    const reject = function(reason) {
+
     }
-    
+
     try {
 
-    } catch(err) {
+    } catch(e) {
 
     }
   }
 
-  then() {
-
-  }
-
-  finally() {
-
-  }
-
-  static resolve() {
-
-  }
-
-  static reject() {
-
-  }
-
-  static all() {
-
-  }
-
-  static race() {
+  then(onFulfilled, onRejected) {
 
   }
 }

@@ -129,7 +129,7 @@ class Promise {
     }, reason => {
       onSettled();
       throw reason; // 保证返回的Promise对象的数据状态一致
-    })
+      })
   }
   //添加 resolve 方法
   static resolve(value) {

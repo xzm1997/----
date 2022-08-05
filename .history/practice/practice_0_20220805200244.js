@@ -16,7 +16,7 @@ class _Promise {
       if (value instanceof Promise) {
         return value.then(resolve, reject);
       }
-      
+
     }
     // reject
     const reject = function() {

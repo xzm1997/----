@@ -11,16 +11,12 @@ class _Promise {
     this.resolveList = [];
     this.rejectList = [];
     // resolve
-    const resolve = function(value) {
-      if (this.PromiseState !== PENDING) return;
-      if (value instanceof Promise) {
-        return value.then(resolve, reject);
-      }
-      
+    const resolve = function() {
+      if ()
     }
     // reject
     const reject = function() {
-      if (this.PromiseState !== PENDING) return;
+
     }
     
     try {

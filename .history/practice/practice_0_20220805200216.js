@@ -12,15 +12,14 @@ class _Promise {
     this.rejectList = [];
     // resolve
     const resolve = function(value) {
-      if (this.PromiseState !== PENDING) return;
       if (value instanceof Promise) {
-        return value.then(resolve, reject);
+
       }
       
     }
     // reject
     const reject = function() {
-      if (this.PromiseState !== PENDING) return;
+
     }
     
     try {
