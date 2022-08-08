@@ -43,18 +43,49 @@ class _Promise {
 
   then(onFulfilled, onRejected) {
     if (typeof onFulfilled !== 'function') {
-      onFulfilled = function(value) {
+      onFulfilled = function (value) {
         return value;
       }
     }
     if (typeof onRejected !== 'function') {
-      onRejected = function(reason) {
+      onRejected = function (reason) {
         throw reason;
       }
     }
     return new Promise((resolve, reject) => {
       let callback = (type) => {
-        
+        try {
+          let result = type(this.result);
+          if (result instanceof Promise) {
+            result.then(value => {
+              resolve(value);
+            }, reason => {
+              reject(reason);
+            })
+          } else {
+            resolve(result)
+          }
+        } catch(e) {
+          reject(e);
+        }
+      }
+      if (this.status === FULFILLED) {
+        setTimeout(() => {
+          callback(onFulfilled);
+        })
+      }
+      if (this.status === REJECTED) {
+        setTimeout(() => {
+          callback(onRejected);
+        })
+      }
+      if (this.status === PENDING) {
+        this.resolveList.push(function() {
+          callback(onFulfilled);
+        })
+        this.rejectList.push(function() {
+          callback(onRejected);
+        })
       }
     })
   }

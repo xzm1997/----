@@ -1,6 +1,6 @@
 function jsonStringify(data) {
   let type = typeof data;
-  if (type !== 'object') {
+  if(type !== 'object') {
     let result = data;
     //data 可能是基础数据类型的情况在这里处理
     if (Number.isNaN(data) || data === Infinity) {

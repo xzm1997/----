@@ -43,18 +43,29 @@ class _Promise {
 
   then(onFulfilled, onRejected) {
     if (typeof onFulfilled !== 'function') {
-      onFulfilled = function(value) {
+      onFulfilled = function (value) {
         return value;
       }
     }
     if (typeof onRejected !== 'function') {
-      onRejected = function(reason) {
+      onRejected = function (reason) {
         throw reason;
       }
     }
     return new Promise((resolve, reject) => {
       let callback = (type) => {
-        
+        try {
+          let result = type(this.result);
+          if (result instanceof Promise) {
+            result.then(value => {
+              resolve(value);
+            }, reason => {
+              reject(reason);
+            })
+          }
+        } catch(e) {
+          
+        }
       }
     })
   }
