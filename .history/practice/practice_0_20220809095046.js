@@ -94,5 +94,5 @@ let arr = [1,4,3,5,2,4,6,2,1];
 // bubbleSort(arr);
 // selectSort();
 // insertSort();
-arr = mergeSort(arr);
+mergeSort(arr);
 console.log(arr);
