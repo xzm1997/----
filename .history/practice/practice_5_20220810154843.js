@@ -4,4 +4,4 @@ let res = arr.reduce((a) => {
   return a+1;
 })
 
-console.log(res);
+console.log(arr);
