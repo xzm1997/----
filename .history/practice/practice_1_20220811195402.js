@@ -16,8 +16,8 @@ function getPwdRank(szPwd) {
 
   if (num+smallCha+bigCha+other >= 3) return 3;
   if (num+smallCha+bigCha+other === 2) {
-    if ((num && smallCha) || (num && bigCha)) return 1;
-    else return 2;
+    if ((num && smallCha) || (num && bigCha)) return 2;
+    else return 1;
   }
   if (num+smallCha+bigCha+other === 1) return 0;
 }
