@@ -1,3 +1,0 @@
-function timeWait(fn, time) {
-
-}

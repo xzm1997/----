@@ -26,11 +26,8 @@ Array.prototype._every = function(fn) {
   if (typeof fn !== 'function') throw 'TypeError';
   let self = this;
   for (let i = 0; i < self.length; ++i) {
-    if (!fn(self[i], i, self)) {
-      return false;
-    }
+    if ()
   }
-  return true;
 }
 
 Array.prototype._some = function() {

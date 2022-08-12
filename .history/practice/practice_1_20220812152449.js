@@ -22,15 +22,8 @@ Array.prototype._filter = function(fn) {
   return res;
 }
 
-Array.prototype._every = function(fn) {
-  if (typeof fn !== 'function') throw 'TypeError';
+Array.prototype._every = function() {
   let self = this;
-  for (let i = 0; i < self.length; ++i) {
-    if (!fn(self[i], i, self)) {
-      return false;
-    }
-  }
-  return true;
 }
 
 Array.prototype._some = function() {

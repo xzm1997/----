@@ -131,13 +131,7 @@ class Promise {
   }
 
   static all(promises) {
-    return new Promise((resolve, reject) => {
-      let count = 0;
-      let res = [];
-      for (let i = 0; i < promises.length; ++i) {
-        
-      }
-    })
+
   }
 
   static race(promises) {

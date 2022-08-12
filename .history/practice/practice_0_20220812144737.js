@@ -7,16 +7,12 @@ class Promise {
     this.status = PENDING;
     this.result = null;
     this.resolveList = [];
-    this.rejectList = [];
+    this.rejectedList = [];
 
     const resolve = function(value) {
       if (this.status !== PENDING) return;
       if (value instanceof Promise) {
-        value.then(value => {
-          resolve(value);
-        }, reason => {
-          reject(reason);
-        })
+        return value.then(resolve, reject);
       }
 
       this.status = FULFILLED;
@@ -31,19 +27,19 @@ class Promise {
     const reject = function(reason) {
       if (this.status !== PENDING) return;
 
-      this.status = FULFILLED;
+      this.status = REJECTED;
       this.result = reason;
       setTimeout(() => {
-        this.rejectList.forEach(callback => {
+        this.rejectedList.forEach(callback => {
           callback(reason);
         })
-      },0)
+      })
     }
 
     try {
       executor(resolve, reject);
-    } catch (e) {
-      reject(e);
+    } catch(err) {
+      reject(err);
     }
   }
 
@@ -53,6 +49,7 @@ class Promise {
         return value;
       }
     }
+
     if (typeof onRejected !== 'function') {
       onRejected = function(reason) {
         throw reason;
@@ -60,28 +57,28 @@ class Promise {
     }
 
     return new Promise((resolve, reject) => {
-      let callback = function(type) {
+      let callback = (type) => {
         try {
-          let res = type(this.result);
-          if (res instanceof Promise) {
-            res.then(value => {
-              resolve(value);
+          let result = type(this.result);
+          if (result instanceof Promise) {
+            this.result.then(value => {
+              resolve(value)
             }, reason => {
               reject(reason);
             })
           } else {
-            resolve(res);
+            resolve(result);
           }
-        } catch (err) {
+        } catch(err) {
           reject(err);
         }
       }
 
       if (this.status === PENDING) {
         this.resolveList.push(() => {
-          callback(onFulfilled);
-        })
-        this.rejectList.push(() => {
+          callback(onFulfilled)
+        });
+        this.rejectedList.push(() => {
           callback(onRejected);
         })
       }
@@ -98,49 +95,21 @@ class Promise {
     })
   }
 
-  catch(onRejected) {
-    return this.then(null, onRejected);
+  finally() {
+
   }
 
-  static resolve(value) {
-    return new Promise((resolve, reject) => {
-      if (value instanceof Promise) {
-        value.then(value => {
-          resolve(value);
-        }, reason => {
-          reject(reason);
-        })
-      } else {
-        resolve(value);
-      }
-    })
-  }
-
-  static reject(reason) {
-    return new Promise((resolve, reject) => {
-      if (reason instanceof Promise) {
-        reason.then(value => {
-          resolve(value);
-        }, reason => {
-          reject(reason);
-        })
-      } else {
-        reject(reason);
-      }
-    })
-  }
-
-  static all(promises) {
+  all(promises) {
     return new Promise((resolve, reject) => {
       let count = 0;
       let res = [];
-      for (let i = 0; i < promises.length; ++i) {
-        
+      for (let promise of promises) {
+        promise
       }
     })
   }
 
-  static race(promises) {
-    
+  race() {
+
   }
 }

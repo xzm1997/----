@@ -116,28 +116,12 @@ class Promise {
     })
   }
 
-  static reject(reason) {
-    return new Promise((resolve, reject) => {
-      if (reason instanceof Promise) {
-        reason.then(value => {
-          resolve(value);
-        }, reason => {
-          reject(reason);
-        })
-      } else {
-        reject(reason);
-      }
-    })
+  static rejected(reason) {
+
   }
 
   static all(promises) {
-    return new Promise((resolve, reject) => {
-      let count = 0;
-      let res = [];
-      for (let i = 0; i < promises.length; ++i) {
-        
-      }
-    })
+
   }
 
   static race(promises) {
