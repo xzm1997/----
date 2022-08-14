@@ -10,6 +10,5 @@ function myNew(obj, ...rest) {
 
 Object.prototype.create = function(obj) {
   function F() {};
-  F.prototype = obj;
-  return new F();
+  F.
 }

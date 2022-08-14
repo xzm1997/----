@@ -17,7 +17,6 @@ function listToTree(nodeList) {
   }
   let res = []
   findChild(0);
-  res.sort((a, b) => (a.id - b.id));
   return res;
 }
 
@@ -35,4 +34,4 @@ let input = [
   {id: 10, name: 'name10', pid: 9},
 ]
 
-console.log(listToTree(input));
+listToTree(input);

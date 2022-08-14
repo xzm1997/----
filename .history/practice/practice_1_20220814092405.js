@@ -1,24 +1,15 @@
 function listToTree(nodeList) {
   const findChild = function(currentID) {
-    let childrenList = []
     for (let item of nodeList) {
       if (item.pid === currentID) {
         let temp = {}
-        if (item.pid === currentID) {
-          temp.id = item.id;
-          temp.name = item.name;
-          childrenList.push(item.id);
-          temp.children = findChild(item.id);
-        }
+
         res.push(temp);
       }
     }
-    return childrenList;
   }
   let res = []
   findChild(0);
-  res.sort((a, b) => (a.id - b.id));
-  return res;
 }
 
 
@@ -34,5 +25,3 @@ let input = [
   {id: 9, name: 'name9', pid: 7},
   {id: 10, name: 'name10', pid: 9},
 ]
-
-console.log(listToTree(input));

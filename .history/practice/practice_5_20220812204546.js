@@ -4,12 +4,6 @@ function myNew(obj, ...rest) {
   if (res && typeof res === 'object') {
     return res;
   } else {
-    return newObj;
-  }
-}
 
-Object.prototype.create = function(obj) {
-  function F() {};
-  F.prototype = obj;
-  return new F();
+  }
 }

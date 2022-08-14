@@ -17,7 +17,6 @@ function listToTree(nodeList) {
   }
   let res = []
   findChild(0);
-  res.sort((a, b) => (a.id - b.id));
   return res;
 }
 

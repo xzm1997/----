@@ -7,9 +7,3 @@ function myNew(obj, ...rest) {
     return newObj;
   }
 }
-
-Object.prototype.create = function(obj) {
-  function F() {};
-  F.prototype = obj;
-  return new F();
-}
