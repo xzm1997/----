@@ -61,99 +61,44 @@ class Promise {
       let callback = function(type) {
         try {
           let res = type(this.result);
-          if (res instanceof Promise) {
-            result.then(value => {
-              resolve(value);
-            }, reason => {
-              reject(reason);
-            })
-          } else {
-            resolve(result);
-          }
         } catch(e) {
           reject(e);
         }
       }
 
       if (this.status === PENDING) {
-        this.resolveList.push(function() {
-          callback(onFulfilled);
-        })
-        this.rejectList.push(function() {
-          callback(onRejected);
-        })
+
       }
       if (this.status === FULFILLED) {
-        setTimeout(() => {
-          callback(onFulfilled);
-        })
+
       }
       if (this.status === REJECTED) {
-        setTimeout(() => {
-          callback(onRejected);
-        })
+
       }
     })
   }
 
   catch(err) {
-    return this.then(null, err);
+
   }
 
   finally(fn) {
-    return this.then(value => {
-      fn();
-      return value;
-    }, reason => {
-      fn();
-      throw reason;
-    })
+
   }
 
   static resolve(value) {
-    return new Promise((resolve, reject) => {
-      if (value instanceof Promise) {
-        value.then(v => {
-          resolve(v);
-        }, r => {
-          reject(r);
-        })
-      } else {
-        resolve(value)
-      }
-    })
+
   }
 
   static reject(reason) {
-    return new Promise((resolve, reject) => {
-      reject(reason);
-    })
+
   }
 
   static all(promises) {
-    return new Promise((resolve, reject) => {
-      let count = 0, result = [];
-      for (let i = 0; i < promises.length; ++i) {
-        promises[i].then(v => {
-          ++count;
-          result[i] = v;
-          if (count === promises.length) {
-            resolve(result);
-          }
-        }, r => {
-          reject(r);
-        })
-      }
-    })
+
   }
 
   static race(promises) {
-    for (let task of promises) {
-      task.then(v => {
-        resolve(v);
-      }, r => {
-        reject(r);
-      })
-    }
+
   }
 }

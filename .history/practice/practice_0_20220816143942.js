@@ -111,49 +111,18 @@ class Promise {
   }
 
   static resolve(value) {
-    return new Promise((resolve, reject) => {
-      if (value instanceof Promise) {
-        value.then(v => {
-          resolve(v);
-        }, r => {
-          reject(r);
-        })
-      } else {
-        resolve(value)
-      }
-    })
+
   }
 
   static reject(reason) {
-    return new Promise((resolve, reject) => {
-      reject(reason);
-    })
+
   }
 
   static all(promises) {
-    return new Promise((resolve, reject) => {
-      let count = 0, result = [];
-      for (let i = 0; i < promises.length; ++i) {
-        promises[i].then(v => {
-          ++count;
-          result[i] = v;
-          if (count === promises.length) {
-            resolve(result);
-          }
-        }, r => {
-          reject(r);
-        })
-      }
-    })
+
   }
 
   static race(promises) {
-    for (let task of promises) {
-      task.then(v => {
-        resolve(v);
-      }, r => {
-        reject(r);
-      })
-    }
+
   }
 }

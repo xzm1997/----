@@ -133,13 +133,9 @@ class Promise {
   static all(promises) {
     return new Promise((resolve, reject) => {
       let count = 0, result = [];
-      for (let i = 0; i < promises.length; ++i) {
-        promises[i].then(v => {
-          ++count;
-          result[i] = v;
-          if (count === promises.length) {
-            resolve(result);
-          }
+      for (let task of promises) {
+        task.then(v => {
+
         }, r => {
           reject(r);
         })
@@ -148,12 +144,6 @@ class Promise {
   }
 
   static race(promises) {
-    for (let task of promises) {
-      task.then(v => {
-        resolve(v);
-      }, r => {
-        reject(r);
-      })
-    }
+
   }
 }
