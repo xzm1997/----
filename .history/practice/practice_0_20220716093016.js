@@ -1,3 +1,0 @@
-Promise.myAll = function(Promises) {
-  
-}

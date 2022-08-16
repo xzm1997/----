@@ -1,9 +1,0 @@
-class Promise {
-  constructor() {
-    
-  }
-
-  then() {
-
-  }
-}
