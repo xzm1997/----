@@ -1,21 +1,19 @@
 function listToTree(nodeList) {
-  const findChild = function(currentID) {
-    let childrenList = []
+  function step(pid) {
+    childrenList = [];
     for (let item of nodeList) {
-      if (item.pid === currentID) {
-        let temp = {}
-        temp.id = item.id;
-        temp.name = item.name;
+      if (item.pid === pid) {
+        let newNode = item;
+        delete newNode.pid;
         childrenList.push(item.id);
-        temp.children = findChild(item.id);
-        res.push(temp);
+        newNode.children = step(item.id);
       }
+      res.push(newNode)
     }
     return childrenList;
   }
-  let res = []
-  findChild(0);
-  res.sort((a, b) => (a.id - b.id));
+  let res = [];
+  step(0);
   return res;
 }
 

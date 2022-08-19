@@ -1,3 +1,0 @@
-function myApply(context, ...args) {
-  
-}

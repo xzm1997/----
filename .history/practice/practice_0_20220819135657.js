@@ -1,5 +1,5 @@
 function add(...args) {
-  return args.reduce((a, b) => a + b);
+  args.reduce((a, b) => a + b);
 }
 
 function currying(fn) {

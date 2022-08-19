@@ -7,8 +7,8 @@ function currying (fn) {
   return function temp (...newArgs) {
     if (newArgs.length) {
         args = [
-          ...args,
-          ...newArgs
+            ...args,
+            ...newArgs
         ]
         return temp
     } else {

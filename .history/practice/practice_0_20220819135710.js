@@ -9,7 +9,7 @@ function currying(fn) {
       args = args.concat(newArgs);
       return F;
     } else {
-      let res = fn.apply(this, args)
+      let res = fn(args);
       args = [];
       return res;
     }

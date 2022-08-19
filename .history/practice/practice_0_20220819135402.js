@@ -1,5 +1,5 @@
 function add(...args) {
-  return args.reduce((a, b) => a + b);
+  args.reduce((a, b) => a + b);
 }
 
 function currying(fn) {
@@ -9,7 +9,7 @@ function currying(fn) {
       args = args.concat(newArgs);
       return F;
     } else {
-      let res = fn.apply(this, args)
+      let res = fn(args);
       args = [];
       return res;
     }
@@ -18,5 +18,3 @@ function currying(fn) {
 
 
 let curryAdd = currying(add);
-console.log(curryAdd(1,2,3)(4,5,6)());
-console.log(curryAdd(1)(2)(3)(4)(5)());

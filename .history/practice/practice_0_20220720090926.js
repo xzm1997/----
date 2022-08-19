@@ -1,3 +1,0 @@
-let myNew = function(obj) {
-  
-}
