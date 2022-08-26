@@ -1,0 +1,3 @@
+function myInstanceOf (left, right) {
+  
+}

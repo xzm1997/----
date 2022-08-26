@@ -1,3 +1,0 @@
-const myBind = function () {
-  
-}

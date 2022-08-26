@@ -22,25 +22,25 @@
 //   console.log(res);
 // }
 
-// let n = parseInt(readline());
+let n = parseInt(readline());
 
-// for (let i = 0; i < n; ++i) {
-//   let m = parseInt(readline());
-//   if (m < 1) {
-//     console.log('');
-//     continue;
-//   }
-//   let ans = readline().split(' ').map(i => parseInt(i));
-//   for (let j = 1; j < m; ++j) {
-//     let hash = readline().split(' ').map(i => parseInt(i));
-//     let temp = [];
-//     hash.forEach(i => {
-//       if (ans.indexOf(i) !== -1) {
-//         temp.push(i);
-//       }
-//     })
-//     ans = temp;
-//   }
-//   let res = ans.join(' ');
-//   console.log(res);
-// }
+for (let i = 0; i < n; ++i) {
+  let m = parseInt(readline());
+  if (m < 1) {
+    console.log('');
+    continue;
+  }
+  let ans = readline().split(' ').map(i => parseInt(i));
+  for (let j = 1; j < m; ++j) {
+    let hash = readline().split(' ').map(i => parseInt(i));
+    let temp = [];
+    hash.forEach(i => {
+      if (ans.indexOf(i) !== -1) {
+        temp.push(i);
+      }
+    })
+    ans = temp;
+  }
+  let res = ans.join(' ');
+  console.log(res);
+}
