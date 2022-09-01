@@ -1,3 +1,0 @@
-function myInstanceOf (left, right) {
-  
-}

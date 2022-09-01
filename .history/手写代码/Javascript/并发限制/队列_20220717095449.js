@@ -1,6 +1,0 @@
-
-
-// Test
-const targetFn = function () {
-  
-}

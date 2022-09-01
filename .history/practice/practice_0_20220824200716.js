@@ -1,3 +1,0 @@
-function myFlat(arr, num) {
-  
-}

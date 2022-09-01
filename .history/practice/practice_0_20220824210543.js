@@ -1,6 +1,0 @@
-class myPromise {
-  constructor(executor) {
-
-  }
-  
-}

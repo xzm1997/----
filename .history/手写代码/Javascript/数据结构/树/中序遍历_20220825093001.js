@@ -1,3 +1,0 @@
-function inOrderTraversalByStack(root) {
-
-}

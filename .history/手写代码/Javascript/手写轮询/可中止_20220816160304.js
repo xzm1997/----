@@ -1,3 +1,0 @@
-asyncLoop = function() {
-  
-}
