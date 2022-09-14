@@ -1,0 +1,14 @@
+const read_line = require('readline-sync');
+
+let n, m, count = 0, arr;
+let flag = [];
+
+let main = function(args) {
+  [n,m] = read_line.question("").split(' ').map(item => parseInt(item));
+  arr = [...Array(n+1)].map(item => new Array(n+1));
+  flag = Array(n+1);
+  for (let i = 1; i <= m; ++i) {
+    let u, v;
+    [u, v] = read_line.question("").split(' ').map(item => parseInt(item));
+  }
+}
