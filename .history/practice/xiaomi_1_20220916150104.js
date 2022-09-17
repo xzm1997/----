@@ -1,0 +1,5 @@
+function myStorageSet(obj) {
+  
+}
+
+
