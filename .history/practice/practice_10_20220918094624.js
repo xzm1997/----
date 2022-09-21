@@ -1,0 +1,13 @@
+function findNum(arr) {
+  arr.sort((a,b) => a-b);
+  let target;
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] !== i) return i;
+  }
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] !== i) return i;
+  }
+  return arr.length;
+}
+
+console.log(findNum([1,2,4]))
