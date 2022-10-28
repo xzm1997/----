@@ -19,7 +19,11 @@ function findAllArray(rank) {
   for (let i = rank-1; i > 0; --i) {
     target += i;
   }
-  return 2**target;
+  console.log(target)
+  for (let i = target-1; i > 0; --i) {
+    res *= i;
+  }
+  return res;
 }
 
 console.log(findAllArray(3))

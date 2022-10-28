@@ -15,14 +15,17 @@ function solveProblem2(students_data) {
 
 
 function findAllArray(rank) {
-  let target = 0, res = 1;
+  let target = 1, res = 1;
   for (let i = rank-1; i > 0; --i) {
-    target += i;
+    target *= i;
   }
-  return 2**target;
+  for (let i = target-1; i > 0; --i) {
+    res *= i;
+  }
+  return res;
 }
 
-console.log(findAllArray(3))
+console.log(findAllArray(2))
 // function testArray(item) {
 //   let len = item.length;
 //   for (let i = 1; i < len; ++i) {

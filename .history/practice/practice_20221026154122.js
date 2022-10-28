@@ -19,7 +19,7 @@ function findAllArray(rank) {
   for (let i = rank-1; i > 0; --i) {
     target += i;
   }
-  return 2**target;
+  return 2***target;
 }
 
 console.log(findAllArray(3))

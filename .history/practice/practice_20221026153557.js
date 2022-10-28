@@ -17,9 +17,13 @@ function solveProblem2(students_data) {
 function findAllArray(rank) {
   let target = 0, res = 1;
   for (let i = rank-1; i > 0; --i) {
-    target += i;
+    target *= i;
   }
-  return 2**target;
+  console.log(target)
+  for (let i = target-1; i > 0; --i) {
+    res *= i;
+  }
+  return res;
 }
 
 console.log(findAllArray(3))

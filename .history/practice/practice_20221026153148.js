@@ -15,14 +15,9 @@ function solveProblem2(students_data) {
 
 
 function findAllArray(rank) {
-  let target = 0, res = 1;
-  for (let i = rank-1; i > 0; --i) {
-    target += i;
-  }
-  return 2**target;
+  
 }
 
-console.log(findAllArray(3))
 // function testArray(item) {
 //   let len = item.length;
 //   for (let i = 1; i < len; ++i) {
